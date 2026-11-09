@@ -71,7 +71,7 @@ flowchart TD
     PCLK2[APB2: 84 MHz] --> SCHED
     TICK[SysTick / 1 kHz tick] --> TASK[vTaskBlinky]
     TASK --> LED[PC13: LED]
-    MAIN[main()] --> CLK[SystemClock]
+    MAIN[main] --> CLK[SystemClock]
     CLK --> HCLK
 ```
 
