@@ -65,32 +65,14 @@ mg_embedded_blink_rtos_stm32f4/
 ## Mermaid Architecture Diagram
 
 ```mermaid
-graph TD
-    subgraph Hardware["STM32F407 Hardware"]
-        HCLK[HCLK: 168 MHz]
-        PCLK1[APB1: 42 MHz]
-        PCLK2[APB2: 84 MHz]
-        LED[PC13: LED]
-    end
-
-    subgraph Kernel["FreeRTOS Kernel"]
-        TICK[SysTick Interrupt / 1 kHz tick]
-        TASK[vTaskBlinky: LED Toggle]
-        SCHED[Scheduler]
-    end
-
-    subgraph Code["Application Code"]
-        MAIN[main()]
-        CLK[SystemClock_Config()]
-    end
-
-    MAIN --> CLK
+flowchart TD
+    HCLK[HCLK: 168 MHz] --> SCHED[Scheduler]
+    PCLK1[APB1: 42 MHz] --> SCHED
+    PCLK2[APB2: 84 MHz] --> SCHED
+    TICK[SysTick / 1 kHz tick] --> TASK[vTaskBlinky]
+    TASK --> LED[PC13: LED]
+    MAIN[main()] --> CLK[SystemClock]
     CLK --> HCLK
-    HCLK --> SCHED
-    SCHED --> TASK
-    SCHED --> TICK
-    TASK --> LED
-    TICK --> TASK
 ```
 
 ## Build Configuration
