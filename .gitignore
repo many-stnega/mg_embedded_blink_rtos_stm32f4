@@ -1,0 +1,28 @@
+# Object files
+*.o
+*.d
+
+# ELF and HEX files
+*.elf
+*.hex
+
+# Map files
+*.map
+
+# IDE project files
+*.codeproj
+*.mdw
+*.opt
+
+# Build artifacts
+.build/
+
+# STM32CubeIDE
+.metadata/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Binary outputs
+blink_rtos_f4
