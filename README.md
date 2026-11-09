@@ -62,7 +62,7 @@ mg_embedded_blink_rtos_stm32f4/
                     └── FreeRTOSConfig.h  # FreeRTOS settings
 ```
 
-## Mermaid Architecture Diagram
+## Mermaid Architecture Diagram (Color)
 
 ```mermaid
 flowchart TD
@@ -73,6 +73,16 @@ flowchart TD
     TASK --> LED[PC13: LED]
     MAIN[main] --> CLK[SystemClock]
     CLK --> HCLK
+
+    style HCLK fill:#1f78b4,color:#fff,stroke:#1f78b4,stroke-width:2px
+    style SCHED fill:#ff7f00,color:#fff,stroke:#ff7f00,stroke-width:2px
+    style PCLK1 fill:#2ca02c,color:#fff,stroke:#2ca02c,stroke-width:2px
+    style PCLK2 fill:#2ca02c,color:#fff,stroke:#2ca02c,stroke-width:2px
+    style TICK fill:#9467bd,color:#fff,stroke:#9467bd,stroke-width:2px
+    style TASK fill:#9467bd,color:#fff,stroke:#9467bd,stroke-width:2px
+    style LED fill:#e377c2,color:#fff,stroke:#e377c2,stroke-width:2px
+    style MAIN fill:#7f7f7f,color:#fff,stroke:#7f7f7f,stroke-width:2px
+    style CLK fill:#7f7f7f,color:#fff,stroke:#7f7f7f,stroke-width:2px
 ```
 
 ## Build Configuration
